@@ -90,6 +90,24 @@ class CommandLineTests(unittest.TestCase):
                 self.assertIn("error:", result.stderr)
                 self.assertNotIn("Traceback", result.stderr)
 
+    def test_json_cli(self):
+        import json
+        result = self.run_cli("--flow-gpd", "300", "--json")
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(result.stderr, "")
+        payload = json.loads(result.stdout)
+        self.assertEqual(payload, {
+            "design_flow_gpd": 300,
+            "formula_liquid_gallons": 1000.0,
+            "rounded_liquid_gallons": 1000,
+        })
+
+    def test_json_cli_still_rejects_invalid_flow(self):
+        result = self.run_cli("--flow-gpd", "5001", "--json")
+        self.assertEqual(result.returncode, 2)
+        self.assertEqual(result.stdout, "")
+        self.assertIn("error:", result.stderr)
+
     def test_help_is_noninteractive(self):
         result = self.run_cli("--help")
         self.assertEqual(result.returncode, 0)

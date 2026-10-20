@@ -8,8 +8,9 @@ This automated contribution is for Jake's Out West Septic project.
 from __future__ import annotations
 
 import argparse
+import json
 import math
-from dataclasses import dataclass
+from dataclasses import asdict, dataclass
 
 
 def _validate_flow(design_flow_gpd: int) -> int:
@@ -84,6 +85,10 @@ def _build_arg_parser() -> argparse.ArgumentParser:
         "--flow-gpd", type=int, required=True,
         help="Externally determined design flow, a whole number from 1 to 5000 gpd.",
     )
+    parser.add_argument(
+        "--json", action="store_true",
+        help="Print the report as JSON instead of text.",
+    )
     return parser
 
 
@@ -94,7 +99,7 @@ def main(argv: list[str] | None = None) -> int:
         report = OutWestSepticTankSizer().size_report(design_flow_gpd=args.flow_gpd)
     except ValueError as error:
         parser.error(str(error))
-    print(report.render())
+    print(json.dumps(asdict(report), indent=2, allow_nan=False) if args.json else report.render())
     return 0
 
 
