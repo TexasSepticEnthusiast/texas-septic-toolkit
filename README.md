@@ -96,7 +96,7 @@ That check validates blank-template structure, not completed customer records or
 | Calculation inputs and evidence | [Tool inputs and sources](guides/tool-inputs-and-sources.md) |
 | Permitting | [Palo Pinto County](guides/tceq-ossf-permitting-palo-pinto-county.md), [Possum Kingdom Lake](guides/possum-kingdom-lake-septic-considerations.md) |
 | Soils and system choices | [Soil research](guides/palo-pinto-county-soil-types-septic.md), [conventional and aerobic systems](guides/conventional-vs-aerobic-septic-texas.md) |
-| Project planning | [Cost questions](guides/septic-costs-north-texas-2026.md), [site preparation](guides/land-clearing-site-prep-before-septic.md), [installation process](guides/what-to-expect-septic-install-day.md) |
+| Project planning | [Cost questions](guides/septic-costs-north-texas-2026.md), [site preparation](guides/land-clearing-site-prep-before-septic.md), [installation process](guides/what-to-expect-septic-install-day.md), [buying rural land](guides/buying-rural-land-ossf-questions.md) |
 | Existing systems | [Inspection questions](guides/septic-inspection-checklist-texas-real-estate.md), [maintenance](guides/septic-maintenance-schedule-homeowners.md), [warning signs](guides/septic-warning-signs-when-to-call.md) |
 
 The [reference index](wiki/Home.md) links the Markdown files stored in this checkout. A county or town page describes a research topic; it is not a statement of business coverage. Parker and Tarrant counties are outside this project's local coverage scope.
